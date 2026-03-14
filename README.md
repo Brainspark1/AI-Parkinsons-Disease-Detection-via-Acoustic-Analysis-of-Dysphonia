@@ -11,7 +11,7 @@ For reference, when the term "dysphonia" is used, typically it refers to a voice
 The model is trained on the **UCI Parkinson’s Data Set**.
 * **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/parkinsons)
 * **Samples:** 195 biomedical voice recordings.
-* **Key Features:** * `MDVP:Jitter(%)`: Frequency variation in vocal cord vibration.
+* **Key Features:** `MDVP:Jitter(%)`: Frequency variation in vocal cord vibration.
     * `MDVP:Shimmer`: Amplitude (loudness) instability.
     * `HNR`: Harmonics-to-Noise Ratio (clarity vs. breathiness).
     * `PPE`: Pitch Period Entropy (measures of vocal chaos).

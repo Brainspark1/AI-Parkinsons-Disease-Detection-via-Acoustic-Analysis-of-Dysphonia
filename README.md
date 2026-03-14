@@ -28,17 +28,20 @@ The neural network is built with **PyTorch** and consists of:
 ```bash
 git clone [https://github.com/Brainspark1/AI-Parkinsons-Disease.git](https://github.com/Brainspark1/AI-Parkinsons-Disease.git)
 cd AI-Parkinsons-Disease
+```
 
 ### 2. Set up the environment
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 pip install -r requirements.txt
+```
 
 ### 3. Training
 Place the parkinsons.data file in the ```data/ directory.
 ```bash
 python3 train.py
+```
 
 ---
 

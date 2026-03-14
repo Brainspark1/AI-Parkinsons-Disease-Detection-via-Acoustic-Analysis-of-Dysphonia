@@ -43,10 +43,13 @@ Place the parkinsons.data file in the ```data/``` directory.
 ```bash
 python3 train.py
 ```
+<<<<<<< HEAD
 Then, compare machine learning models by running
 ```bash
 python3 compare_models.py
 ```
+=======
+>>>>>>> 45533afed3a39cc8b428372f2871de08ce808aec
 
 ### 3b. Jupyter Notebook
 For a more visual experience with step-by-step explanations and loss plots, use the provided notebook ```Parkinsons_Detection.ipynb```
@@ -55,6 +58,7 @@ Ensure the environment is activated and jupyter is installed. Then, launch the n
 jupyter notebook Parkinsons_Detection.ipynb
 ```
 
+<<<<<<< HEAD
 ## Results and Findings
 ![Model Comparison Chart](assets/Compare_Models_Plot.png)
 Figure 1: Comparison of machine learning models by recall and accuracy
@@ -65,6 +69,8 @@ Figure 2: Side-by-side listing of machine learning models by recall and accuracy
 ## Conclusion
 From the gathered data, it is clear although a logistic regression is the most accurate facet of gathering this data, with an obtained accuracy of 81.03%, the recall of an SVM appears to make this method of AI gathering the most optimal, with a 99% recall suggesting that out of every 100 patients with Parkinson's disease, only 1 managed to incorrectly be identified. This study has shown that SVMs are highly optimal in this field, and should thus be further employed moving forward to better identify patients that may or may not have Parkinson's disease. 
 
+=======
+>>>>>>> 45533afed3a39cc8b428372f2871de08ce808aec
 ---
 
 ## Medical Disclaimer

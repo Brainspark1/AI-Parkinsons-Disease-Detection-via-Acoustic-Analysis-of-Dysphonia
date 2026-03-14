@@ -63,7 +63,7 @@ Figure 1: Comparison of machine learning models by recall and accuracy
 Figure 2: Side-by-side listing of machine learning models by recall and accuracy
 
 ## Conclusion
-From the gathered data, it is clear although a logistic regression is the most accurate facet of gathering this data, with an obtained accuracy of 81.03%, the recall of an SVM appears to make this method of AI gathering the most optimal, with a 99% recall suggesting that out of every 100 patients with Parkinson's disease, only 1 managed to incorrectly be identified. This study has shown that SVMs are highly optimal in this field, and should thus be further employed moving forward to better identify patients that may or may not have Parkinson's disease. 
+Analysis of the gathered data reveals a trade-off between precision and sensitivity. While Logistic Regression achieved a high accuracy of 81.03%, the Support Vector Machine (SVM) demonstrated a recall of 99%. In a medical diagnostic context, recall is arguably the more vital metric; a 99% recall suggests that only 1% of patients with Parkinson's were incorrectly identified as healthy. 
 
 ## Medical Disclaimer
 

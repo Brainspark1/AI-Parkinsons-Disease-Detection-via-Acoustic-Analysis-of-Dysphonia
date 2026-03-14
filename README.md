@@ -38,10 +38,17 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Training
+### 3a. Terminal Training
 Place the parkinsons.data file in the ```data/``` directory.
 ```bash
 python3 train.py
+```
+
+### 3b. Jupyter Notebook
+For a more visual experience with step-by-step explanations and loss plots, use the provided notebook ```Parkinsons_Detection.ipynb```
+Ensure the environment is activated and jupyter is installed. Then, launch the notebook.
+```bash
+jupyter notebook Parkinsons_Detection.ipynb
 ```
 
 ---

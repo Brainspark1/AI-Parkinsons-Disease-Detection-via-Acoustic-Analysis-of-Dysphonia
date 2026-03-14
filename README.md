@@ -38,14 +38,14 @@ pip install -r requirements.txt
 ```
 
 ### 3. Training
-Place the parkinsons.data file in the ```data/ directory.
+Place the parkinsons.data file in the ```data/``` directory.
 ```bash
 python3 train.py
 ```
 
 ---
 
-## ⚖️ Medical Disclaimer
+## Medical Disclaimer
 
 > **IMPORTANT:** This project is part of an AI research exercise and is intended for **educational and research purposes only**. 
 >

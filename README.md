@@ -76,3 +76,4 @@ Analysis of the gathered data reveals a trade-off between precision and sensitiv
 ---
 
 For any questions, feel free to reach out to [brainsparkteam@gmail.com](mailto:brainsparkteam@gmail.com).
+Laid out research publication [here](https://drive.google.com/file/d/12X3VXkcvLSJRKLXckPO4zsJJjx6KUnsh/view?usp=sharing).

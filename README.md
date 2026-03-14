@@ -55,3 +55,5 @@ python3 train.py
 > * **Consult a Professional:** If you or someone you know is concerned about Parkinson's Disease or any other health condition, please consult a qualified healthcare provider or neurologist.
 
 ---
+
+For any questions, feel free to reach out to [brainsparkteam@gmail.com](mailto:brainsparkteam@gmail.com)

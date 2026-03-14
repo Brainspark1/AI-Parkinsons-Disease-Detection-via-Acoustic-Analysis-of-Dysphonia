@@ -56,4 +56,4 @@ python3 train.py
 
 ---
 
-For any questions, feel free to reach out to [brainsparkteam@gmail.com](mailto:brainsparkteam@gmail.com)
+For any questions, feel free to reach out to [brainsparkteam@gmail.com](mailto:brainsparkteam@gmail.com).

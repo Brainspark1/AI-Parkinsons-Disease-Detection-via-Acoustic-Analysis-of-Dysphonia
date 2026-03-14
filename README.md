@@ -1,4 +1,4 @@
-# Parkinson’s Disease Detection via Acoustic Analysis
+# Parkinson’s Disease Detection via Acoustic Analysis of Dysphonia
 
 This project implements a Deep Learning classifier using **PyTorch** to predict the presence of Parkinson's Disease (PD) based on biomedical voice measurements. By analyzing vocal fluctuations (dysphonia), the model identifies patterns associated with the early stages of the disease that are often imperceptible to the human ear.
 

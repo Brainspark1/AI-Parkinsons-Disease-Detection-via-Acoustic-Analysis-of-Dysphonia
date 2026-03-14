@@ -4,6 +4,7 @@ This project implements a Deep Learning classifier using **PyTorch** to predict 
 
 ## Overview
 Parkinson's Disease affects muscle control, including the muscles used for speech. This AI utilizes a **Multi-Layer Perceptron (MLP)** architecture to analyze 22 distinct acoustic features—such as pitch jitter, amplitude shimmer, and harmonic noise ratios—to classify patients as either "Healthy" or "Parkinson's."
+For reference, when the term "dysphonia" is used, typically it refers to a voice disorder characterized by difficulty speaking, resulting in a raspy, shaky voice, or changes in pitch and quality.
 
 ## Dataset
 The model is trained on the **UCI Parkinson’s Data Set**.

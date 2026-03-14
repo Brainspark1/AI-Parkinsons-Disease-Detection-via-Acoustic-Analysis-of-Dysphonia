@@ -28,8 +28,7 @@ The neural network is built with **PyTorch** and consists of:
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/Brainspark1/AI-Parkinsons-Disease.git](https://github.com/Brainspark1/AI-Parkinsons-Disease.git)
-cd AI-Parkinsons-Disease
+git clone https://github.com/Brainspark1/AI-Parkinsons-Disease-Detection-via-Acoustic-Analysis-of-Dysphonia.git
 ```
 
 ### 2. Set up the environment

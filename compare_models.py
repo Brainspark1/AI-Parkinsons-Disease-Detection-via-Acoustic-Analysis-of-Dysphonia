@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.model_selection import cross_validate
+from sklearn.model_selection import StratifiedGroupKFold
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 
 # Models
 from sklearn.linear_model import LogisticRegression
@@ -15,15 +17,14 @@ from sklearn.tree import DecisionTreeClassifier
 try:
     df = pd.read_csv('data/parkinsons.data')
     # Dropping 'name' as it's a string ID, 'status' is our target
-    X = df.drop(['name', 'status'], axis=1)
+    X = df.drop(['name', 'status', 'subject_id'], axis=1)
     y = df['status']
+    groups = df['subject_id']
 except FileNotFoundError:
     print("Error: data/parkinsons.data not found. Please ensure the file is in the data folder.")
     exit()
 
-# 2. Scale Features
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+df["subject_id"] = df["name"].apply(lambda x: x.split("_")[2])
 
 # 3. Define the Model "Zoo"
 models = {
@@ -44,22 +45,36 @@ print("-" * 65)
 
 performance_summary = []
 
+gkf = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42)
+
+print(f"{'Model':<20} | {'Accuracy':<10} | {'Recall':<10} | {'F1-Score':<10}")
+print("-" * 65)
+
+performance_summary = []
+
 for name, model in models.items():
-    cv_results = cross_validate(model, X_scaled, y, cv=5, scoring=metrics)
-    
-    acc = cv_results['test_accuracy'].mean()
-    rec = cv_results['test_recall'].mean()
-    prec = cv_results['test_precision'].mean()
-    f1 = cv_results['test_f1'].mean()
-    
+    accuracies, recalls, precisions, f1s = [], [], [], []
+
+    for train_idx, test_idx in gkf.split(X, y, groups):
+        X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
+        y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
+
+        pipeline = Pipeline([
+            ('scaler', StandardScaler()),
+            ('model', model)
+        ])
+
+        pipeline.fit(X_train, y_train)
+        y_pred = pipeline.predict(X_test)
+
+        accuracies.append(accuracy_score(y_test, y_pred))
+        recalls.append(recall_score(y_test, y_pred))
+        precisions.append(precision_score(y_test, y_pred))
+        f1s.append(f1_score(y_test, y_pred))
+
+    acc = np.mean(accuracies)
+    rec = np.mean(recalls)
+    f1 = np.mean(f1s)
+
     performance_summary.append({'Name': name, 'Accuracy': acc, 'Recall': rec, 'F1': f1})
     print(f"{name:<20} | {acc:.4f}     | {rec:.4f}     | {f1:.4f}")
-
-# 5. Optional: Quick Visualization
-summary_df = pd.DataFrame(performance_summary).sort_values(by='Recall', ascending=False)
-summary_df.plot(x='Name', y=['Accuracy', 'Recall'], kind='bar', figsize=(10, 6))
-plt.title("Model Comparison (Sorted by Recall)")
-plt.ylabel("Score")
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
